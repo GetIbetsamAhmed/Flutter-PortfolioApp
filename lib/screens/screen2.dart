@@ -38,39 +38,20 @@ class _Screen2State extends State<Screen2> {
                   scrollDirection: Axis.horizontal,
                   children: const [
                     FieldContainer(
-                      icon: NetworkImage(
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXjQ8b2oSN8pZ5tftU1prqfJIUeIlmH03c4w&usqp=CAU'),
-                      text: 'Container 1',
+                      icon: AssetImage('Assets/MobileApps.svg'),
+                      text: 'Mobile Apps',
                     ),
                     FieldContainer(
-                      icon: NetworkImage(
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXjQ8b2oSN8pZ5tftU1prqfJIUeIlmH03c4w&usqp=CAU'),
-                      text: 'Container 2',
+                      icon: AssetImage('Assets/BackEnd.svg'),
+                      text: 'BackEnd Development',
                     ),
                     FieldContainer(
-                      icon: NetworkImage(
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXjQ8b2oSN8pZ5tftU1prqfJIUeIlmH03c4w&usqp=CAU'),
-                      text: 'Container 3',
+                      icon: AssetImage('Assets/UIUXDesigns.svg'),
+                      text: 'UI/UX Designs',
                     ),
                     FieldContainer(
-                      icon: NetworkImage(
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXjQ8b2oSN8pZ5tftU1prqfJIUeIlmH03c4w&usqp=CAU'),
-                      text: 'Container 4',
-                    ),
-                    FieldContainer(
-                      icon: NetworkImage(
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXjQ8b2oSN8pZ5tftU1prqfJIUeIlmH03c4w&usqp=CAU'),
-                      text: 'Container 5',
-                    ),
-                    FieldContainer(
-                      icon: NetworkImage(
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXjQ8b2oSN8pZ5tftU1prqfJIUeIlmH03c4w&usqp=CAU'),
-                      text: 'Container 6',
-                    ),
-                    FieldContainer(
-                      icon: NetworkImage(
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXjQ8b2oSN8pZ5tftU1prqfJIUeIlmH03c4w&usqp=CAU'),
-                      text: 'Container 7',
+                      icon: AssetImage('Assets/WebDesigns.svg'),
+                      text: 'Web Apps',
                     ),
                   ],
                 ),

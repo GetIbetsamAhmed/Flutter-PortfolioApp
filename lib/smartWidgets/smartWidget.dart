@@ -9,18 +9,21 @@ class textWidget extends StatelessWidget {
   final double textSize;
   final Color textColor;
   final FontWeight textWeight;
+  final TextAlign textAlign;
   const textWidget(
       {Key? key,
       required this.value,
       this.textSize = 10,
       this.textColor = Colors.black,
-      this.textWeight = FontWeight.normal})
+      this.textWeight = FontWeight.normal,
+      this.textAlign = TextAlign.start})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Text(
       value,
+      textAlign: textAlign,
       style: TextStyle(
         color: textColor,
         fontSize: textSize,
@@ -157,10 +160,14 @@ class FieldContainer extends StatelessWidget {
               ),
             ),
             const space(height: 5),
-            textWidget(
-              value: text,
-              textSize: bodyTextSize10,
-              textWeight: FontWeight.bold,
+            SizedBox(
+              width: 50,
+              child: textWidget(
+                textAlign: TextAlign.center,
+                value: text,
+                textSize: 8,
+                textWeight: FontWeight.bold,
+              ),
             ),
           ],
         ));
