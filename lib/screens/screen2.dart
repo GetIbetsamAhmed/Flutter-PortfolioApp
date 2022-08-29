@@ -1,8 +1,11 @@
 //import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../constants/constants.dart';
 import '../smartWidgets/smartWidget.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 //import 'dart:html';
 
 class Screen2 extends StatefulWidget {
@@ -36,21 +39,21 @@ class _Screen2State extends State<Screen2> {
                 width: screen.width,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
-                  children: const [
+                  children: [
                     FieldContainer(
-                      icon: AssetImage('Assets/MobileApps.svg'),
+                      icon: SvgPicture.asset('Assets/MobileApps.svg'),
                       text: 'Mobile Apps',
                     ),
                     FieldContainer(
-                      icon: AssetImage('Assets/BackEnd.svg'),
-                      text: 'BackEnd Development',
+                      icon: SvgPicture.asset('Assets/BackEnd.svg'),
+                      text: 'BackEnd\nDevelopment',
                     ),
                     FieldContainer(
-                      icon: AssetImage('Assets/UIUXDesigns.svg'),
+                      icon: SvgPicture.asset('Assets/UIUXDesigns.svg'),
                       text: 'UI/UX Designs',
                     ),
                     FieldContainer(
-                      icon: AssetImage('Assets/WebDesigns.svg'),
+                      icon: SvgPicture.asset('Assets/WebDesigns.svg'),
                       text: 'Web Apps',
                     ),
                   ],

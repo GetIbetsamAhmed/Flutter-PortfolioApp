@@ -110,7 +110,7 @@ class AppBarContainer extends StatelessWidget {
           // ),
           GestureDetector(
             onTap: () {
-              if (this.check != 1) {
+              if (check != 1) {
                 routeToDefault(context);
               }
             },
@@ -149,19 +149,20 @@ class FieldContainer extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              height: 50,
-              width: 50,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: icon,
-                  fit: BoxFit.fill,
-                ),
-              ),
+            SizedBox(
+              height: 55,
+              width: 55,
+              // decoration: BoxDecoration(
+              //   image: DecorationImage(
+              //     image: icon,
+              //     //fit: BoxFit.fill,
+              //   ),
+              // ),
+              child: icon,
             ),
             const space(height: 5),
             SizedBox(
-              width: 50,
+              width: 70,
               child: textWidget(
                 textAlign: TextAlign.center,
                 value: text,
