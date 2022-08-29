@@ -14,6 +14,7 @@ class _Screen1State extends State<Screen1> {
   @override
   Widget build(BuildContext context) {
     final Size screen = MediaQuery.of(context).size;
+
     return SafeArea(
       child: Scaffold(
         body: Stack(
@@ -28,7 +29,7 @@ class _Screen1State extends State<Screen1> {
                     // space
 
                     // AppBar
-                    const AppBarContainer(),
+                    const AppBarContainer(check: 1),
 
                     //const space(height: 20),
                     const space(height: 10),
