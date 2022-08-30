@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:portfolioapp/constants/constants.dart';
 import 'package:portfolioapp/smartWidgets/smartWidget.dart';
 
@@ -51,35 +52,19 @@ class MessageScreen extends StatelessWidget {
             style: const TextStyle(fontSize: 17),
           ),
         ),
-        bottomNavigationBar: Container(
-          height: 60,
-          color: const Color.fromARGB(255, 235, 235, 235),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              // TextField
-              Container(
-                width: screen.width * 0.7,
-                margin: const EdgeInsets.symmetric(horizontal: 14),
-                height: 30,
-                decoration: const BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      color: commentColor,
-                      width: 1.5,
-                    ),
-                  ),
-                ),
+        body: Stack(
+          children: [
+            SingleChildScrollView(
+              child: Container(
+                height: 800,
+                color: whiteColor,
               ),
-
-              // SendButton
-              const Icon(
-                Icons.send,
-                size: 25,
-                color: commentColor,
-              ),
-            ],
-          ),
+            ),
+            Positioned(
+              bottom: 0,
+              child: MessageContainer(text: "Write your message here"),
+            ),
+          ],
         ),
       ),
     );

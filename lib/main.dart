@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'screens/homePage.dart';
+//import 'screens/homePage.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolioapp/screens/screen1.dart';
 
 //import 'smartWidgets/smartWidget.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         platform: TargetPlatform.android,
         textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
       ),
-      title: "Task No 3",
+      //title: "Task No 3",
       home: const Screen1(),
     );
   }

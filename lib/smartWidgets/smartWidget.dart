@@ -117,7 +117,7 @@ class AppBarContainer extends StatelessWidget {
               }
             },
             child: const Text(
-              'Portfolio App',
+              'Portfola',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),
@@ -485,12 +485,50 @@ class ArrowButtonBack extends StatelessWidget {
   }
 }
 
+class MessageContainer extends StatelessWidget {
+  final String text;
+  final IconData icon;
+  const MessageContainer({Key? key, required this.text, this.icon = Icons.send})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final Size screen = MediaQuery.of(context).size;
+    return Container(
+      height: 65,
+      width: screen.width,
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+      color: whiteShadeColor,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Expanded(
+            child: TextFormField(
+              cursorColor: commentColor,
+              //cursorHeight: 30,
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: text,
+              ),
+            ),
+          ),
+          const space(width: 10),
+          Icon(
+            icon,
+            color: commentColor,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 Map<String, Widget> screens = {
   'screen2': const Screen2(), // 2
   'screen3': const Screen3(), // 3
 };
-int currentScreen = 1;
-var _defaultRoute = const Screen1(); // 1
+int currentScreen = 1; // to hold a screen
 
 routetoScreen(BuildContext context, String screenNum) {
   currentScreen++;
@@ -501,7 +539,7 @@ routetoScreen(BuildContext context, String screenNum) {
 
 routeBack(BuildContext context, String screenNum) {
   currentScreen--;
-  print('\nRoute back triggered');
+  //print('\nRoute back triggered');
   Navigator.pop(context, MaterialPageRoute(builder: (context) {
     return screens[screenNum]!;
   }));
@@ -509,7 +547,7 @@ routeBack(BuildContext context, String screenNum) {
 }
 
 routeToDefault(BuildContext context) {
-  print('\nRoute To Default triggered');
+  //print('\nRoute To Default triggered');
   Navigator.pushAndRemoveUntil(
     context,
     MaterialPageRoute(builder: (context) => const Screen1()),

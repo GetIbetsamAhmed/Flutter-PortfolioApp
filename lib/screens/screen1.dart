@@ -101,7 +101,7 @@ class _Screen1State extends State<Screen1> {
                                   // Ratings Column
                                   const RatingTile(
                                     text: '4.5',
-                                    textDescription: 'Ovverall Rating',
+                                    textDescription: 'Overall Rating',
                                     icon: Icons.star_rounded,
                                   ),
 
