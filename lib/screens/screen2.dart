@@ -1,8 +1,11 @@
 //import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../constants/constants.dart';
 import '../smartWidgets/smartWidget.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 //import 'dart:html';
 
 class Screen2 extends StatefulWidget {
@@ -36,41 +39,22 @@ class _Screen2State extends State<Screen2> {
                 width: screen.width,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
-                  children: const [
+                  children: [
                     FieldContainer(
-                      icon: NetworkImage(
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXjQ8b2oSN8pZ5tftU1prqfJIUeIlmH03c4w&usqp=CAU'),
-                      text: 'Container 1',
+                      icon: SvgPicture.asset('Assets/MobileApps.svg'),
+                      text: 'Mobile Apps',
                     ),
                     FieldContainer(
-                      icon: NetworkImage(
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXjQ8b2oSN8pZ5tftU1prqfJIUeIlmH03c4w&usqp=CAU'),
-                      text: 'Container 2',
+                      icon: SvgPicture.asset('Assets/BackEnd.svg'),
+                      text: 'BackEnd\nDevelopment',
                     ),
                     FieldContainer(
-                      icon: NetworkImage(
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXjQ8b2oSN8pZ5tftU1prqfJIUeIlmH03c4w&usqp=CAU'),
-                      text: 'Container 3',
+                      icon: SvgPicture.asset('Assets/UIUXDesigns.svg'),
+                      text: 'UI/UX Designs',
                     ),
                     FieldContainer(
-                      icon: NetworkImage(
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXjQ8b2oSN8pZ5tftU1prqfJIUeIlmH03c4w&usqp=CAU'),
-                      text: 'Container 4',
-                    ),
-                    FieldContainer(
-                      icon: NetworkImage(
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXjQ8b2oSN8pZ5tftU1prqfJIUeIlmH03c4w&usqp=CAU'),
-                      text: 'Container 5',
-                    ),
-                    FieldContainer(
-                      icon: NetworkImage(
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXjQ8b2oSN8pZ5tftU1prqfJIUeIlmH03c4w&usqp=CAU'),
-                      text: 'Container 6',
-                    ),
-                    FieldContainer(
-                      icon: NetworkImage(
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXjQ8b2oSN8pZ5tftU1prqfJIUeIlmH03c4w&usqp=CAU'),
-                      text: 'Container 7',
+                      icon: SvgPicture.asset('Assets/WebDesigns.svg'),
+                      text: 'Web Apps',
                     ),
                   ],
                 ),
