@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:portfolioapp/screens/Messages.dart';
 import '../constants/constants.dart';
-import '../screens/screen2.dart';
-import '../screens/screen3.dart';
-import '../screens/screen1.dart';
+import '../screens/ViewPortfolio.dart';
+import '../screens/PortfolioDetails.dart';
+import '../screens/HomePage.dart';
 import 'package:portfolioapp/screens/Messages.dart';
 
 class textWidget extends StatelessWidget {
