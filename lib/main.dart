@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'screens/screen1.dart';
+import 'screens/homePage.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 //import 'smartWidgets/smartWidget.dart';
 
 void main() {

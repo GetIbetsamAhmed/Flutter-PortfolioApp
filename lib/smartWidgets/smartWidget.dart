@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:portfolioapp/screens/Messages.dart';
 import '../constants/constants.dart';
 import '../screens/screen2.dart';
 import '../screens/screen3.dart';
 import '../screens/screen1.dart';
+import 'package:portfolioapp/screens/Messages.dart';
 
 class textWidget extends StatelessWidget {
   final String value;
@@ -115,7 +117,7 @@ class AppBarContainer extends StatelessWidget {
               }
             },
             child: const Text(
-              'Embest',
+              'Portfolio App',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),
@@ -373,7 +375,14 @@ class ProfessionalContainer extends StatelessWidget {
 
                           // Message Button
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        MessageScreen(name: personName),
+                                  ));
+                            },
                             child: Container(
                               height: 30,
                               width: 95,
@@ -455,7 +464,11 @@ class _ViewPortfolioButtonState extends State<ViewPortfolioButton> {
 }
 
 class ArrowButtonBack extends StatelessWidget {
-  const ArrowButtonBack({Key? key}) : super(key: key);
+  final Color color;
+  final double iconSize;
+  const ArrowButtonBack(
+      {Key? key, this.color = Colors.black, this.iconSize = 30})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -463,9 +476,10 @@ class ArrowButtonBack extends StatelessWidget {
       onTap: () {
         routeBack(context, 'screen2');
       },
-      child: const IconWidget(
+      child: IconWidget(
         icon: Icons.arrow_back,
-        iconSize: 30,
+        iconSize: iconSize,
+        iconColor: color,
       ),
     );
   }
