@@ -25,7 +25,7 @@ class _Screen2State extends State<Screen2> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // AppBar here
-              const AppBarContainer(),
+              const AppBarContainer(check: 2),
 
               // Space
               const space(height: 10),

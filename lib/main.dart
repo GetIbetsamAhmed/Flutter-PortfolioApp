@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/screen1.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'smartWidgets/smartWidget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +12,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //Map<int, Color> colorMap = {1: whiteColor};
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(

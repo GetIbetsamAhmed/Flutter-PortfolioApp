@@ -1,14 +1,8 @@
-// ignore_for_file: camel_case_types
-// ignore: avoid_web_libraries_in_flutter
 import 'package:flutter/material.dart';
-//import 'package:flutter/services.dart';
-// ignore: depend_on_referenced_packages
 import '../constants/constants.dart';
 import '../screens/screen2.dart';
 import '../screens/screen3.dart';
-
 import '../screens/screen1.dart';
-//import 'dart:html';
 
 class textWidget extends StatelessWidget {
   final String value;
@@ -96,7 +90,8 @@ class space extends StatelessWidget {
 }
 
 class AppBarContainer extends StatelessWidget {
-  const AppBarContainer({Key? key}) : super(key: key);
+  final int check;
+  const AppBarContainer({Key? key, required this.check}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -112,7 +107,9 @@ class AppBarContainer extends StatelessWidget {
           // ),
           GestureDetector(
             onTap: () {
-              routeToDefault(context);
+              if (this.check != 1) {
+                routeToDefault(context);
+              }
             },
             child: const Text(
               'Embest',
@@ -470,32 +467,31 @@ Map<String, Widget> screens = {
   'screen2': const Screen2(), // 2
   'screen3': const Screen3(), // 3
 };
-int _currentScreen = 1;
+int currentScreen = 1;
 var _defaultRoute = const Screen1(); // 1
 
 routetoScreen(BuildContext context, String screenNum) {
+  currentScreen++;
   Navigator.push(context, MaterialPageRoute(builder: (context) {
-    _currentScreen++;
-    //print(currentScreen);
     return screens[screenNum]!;
   }));
 }
 
 routeBack(BuildContext context, String screenNum) {
-  //if (!Navigator.of(context).) {
+  currentScreen--;
+  print('\nRoute back triggered');
   Navigator.pop(context, MaterialPageRoute(builder: (context) {
-    _currentScreen++;
-    //print(currentScreen);
     return screens[screenNum]!;
   }));
   //}
 }
 
 routeToDefault(BuildContext context) {
-  if (_currentScreen != 1) {
-    Navigator.pop(
-        context, MaterialPageRoute(builder: (context) => _defaultRoute));
-    _currentScreen = 1;
-    //print(currentScreen);
-  }
+  print('\nRoute To Default triggered');
+  Navigator.pushAndRemoveUntil(
+    context,
+    MaterialPageRoute(builder: (context) => const Screen1()),
+    // ModalRoute.withName("/Home"),
+    (route) => false,
+  );
 }
