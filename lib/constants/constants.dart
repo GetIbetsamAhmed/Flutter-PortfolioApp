@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 //import 'dart:html';
 
 const whiteColor = Colors.white;
+const redColorForMessages = Color.fromARGB(255, 248, 100, 89);
 const pinkColor = Color.fromARGB(255, 241, 86, 138);
 const whiteShadeColor = Color.fromARGB(255, 223, 221, 221);
 const whiteShadeColorSearchBar = Color.fromARGB(197, 138, 136, 136);

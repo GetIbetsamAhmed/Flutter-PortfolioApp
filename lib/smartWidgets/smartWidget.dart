@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:portfolioapp/screens/Messages.dart';
 import '../constants/constants.dart';
-import '../screens/screen2.dart';
-import '../screens/screen3.dart';
-import '../screens/screen1.dart';
+import '../screens/ViewPortfolio.dart';
+import '../screens/PortfolioDetails.dart';
+import '../screens/HomePage.dart';
+import 'package:portfolioapp/screens/Messages.dart';
 
 class textWidget extends StatelessWidget {
   final String value;
@@ -115,7 +117,7 @@ class AppBarContainer extends StatelessWidget {
               }
             },
             child: const Text(
-              'Embest',
+              'Portfola',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),
@@ -373,7 +375,14 @@ class ProfessionalContainer extends StatelessWidget {
 
                           // Message Button
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        MessageScreen(name: personName),
+                                  ));
+                            },
                             child: Container(
                               height: 30,
                               width: 95,
@@ -455,7 +464,11 @@ class _ViewPortfolioButtonState extends State<ViewPortfolioButton> {
 }
 
 class ArrowButtonBack extends StatelessWidget {
-  const ArrowButtonBack({Key? key}) : super(key: key);
+  final Color color;
+  final double iconSize;
+  const ArrowButtonBack(
+      {Key? key, this.color = Colors.black, this.iconSize = 30})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -463,9 +476,49 @@ class ArrowButtonBack extends StatelessWidget {
       onTap: () {
         routeBack(context, 'screen2');
       },
-      child: const IconWidget(
+      child: IconWidget(
         icon: Icons.arrow_back,
-        iconSize: 30,
+        iconSize: iconSize,
+        iconColor: color,
+      ),
+    );
+  }
+}
+
+class MessageContainer extends StatelessWidget {
+  final String text;
+  final IconData icon;
+  const MessageContainer({Key? key, required this.text, this.icon = Icons.send})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final Size screen = MediaQuery.of(context).size;
+    return Container(
+      height: 65,
+      width: screen.width,
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+      color: whiteShadeColor,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Expanded(
+            child: TextFormField(
+              cursorColor: commentColor,
+              //cursorHeight: 30,
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: text,
+              ),
+            ),
+          ),
+          const space(width: 10),
+          Icon(
+            icon,
+            color: commentColor,
+          ),
+        ],
       ),
     );
   }
@@ -475,8 +528,7 @@ Map<String, Widget> screens = {
   'screen2': const Screen2(), // 2
   'screen3': const Screen3(), // 3
 };
-int currentScreen = 1;
-var _defaultRoute = const Screen1(); // 1
+int currentScreen = 1; // to hold a screen
 
 routetoScreen(BuildContext context, String screenNum) {
   currentScreen++;
@@ -487,7 +539,7 @@ routetoScreen(BuildContext context, String screenNum) {
 
 routeBack(BuildContext context, String screenNum) {
   currentScreen--;
-  print('\nRoute back triggered');
+  //print('\nRoute back triggered');
   Navigator.pop(context, MaterialPageRoute(builder: (context) {
     return screens[screenNum]!;
   }));
@@ -495,7 +547,7 @@ routeBack(BuildContext context, String screenNum) {
 }
 
 routeToDefault(BuildContext context) {
-  print('\nRoute To Default triggered');
+  //print('\nRoute To Default triggered');
   Navigator.pushAndRemoveUntil(
     context,
     MaterialPageRoute(builder: (context) => const Screen1()),
